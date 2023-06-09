@@ -11,6 +11,7 @@ const QuizContextProvider = ({ children }) => {
     score: 0,
     questionIndex: 0,
     questions: [],
+    correctQuestions: [],
   });
 
   // Lấy câu hỏi từ API
@@ -28,7 +29,9 @@ const QuizContextProvider = ({ children }) => {
     const score = quizState.score + 1;
     dispatch({ type: "CORRECT_ANSWER", payload: score });
   };
-
+  const saveAnswer = (question, answer) => {
+    dispatch({ type: "SAVE_QUESTION", payload: { question, answer } });
+  };
   // Chuyển sang câu hỏi tiếp theo
   const nextQuestion = () => {
     const questionIndex = quizState.questionIndex + 1;
@@ -57,6 +60,7 @@ const QuizContextProvider = ({ children }) => {
     handlePause,
     isLoading,
     setIsLoading,
+    saveAnswer,
   };
 
   return (

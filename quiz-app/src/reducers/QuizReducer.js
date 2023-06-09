@@ -21,6 +21,11 @@ export const quizReducer = (state, action) => {
           ...state,
           questionIndex: payload
         };
+        case 'SAVE_QUESTION':
+          return {
+            ...state,
+            correctQuestions: [...state.correctQuestions, payload]
+          };
       default:
         return state;
     }

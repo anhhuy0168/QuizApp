@@ -8,7 +8,8 @@ const Question = () => {
   const {        
     quizState: { questionIndex, questions },
     checkAnswer,
-    nextQuestion
+    nextQuestion,
+    saveAnswer
   } = useContext(quizContext);
 
   const [answer, setAnswer] = useState(null);
@@ -31,8 +32,9 @@ const Question = () => {
         });
     }
     if (selectedAnswer && answer === currentQuestion.correct_answer) {
-      console.log(selectedAnswer,"dasdasdsad");
+      const isCorrect  = currentQuestion.correct_answer;
       checkAnswer();
+      saveAnswer(currentQuestion, isCorrect);
     }
     if (selectedAnswer) {
       toast.success('Good job !!!', {
@@ -56,7 +58,7 @@ const Question = () => {
   useEffect(() => {
     setCurrentQuestion(questions[questionIndex]);
     setSelectedAnswer(false);
-  }, [questionIndex]);
+  }, [questionIndex]);  
   useEffect(() => {
     setCurrentQuestion(questions[questionIndex]);
   }, [answer]);

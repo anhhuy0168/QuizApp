@@ -14,8 +14,8 @@ const HomePage = () => {
       {isLoading && questions.length === 0 && (
         <>
           <div className="loading">
-            <div class="progress">
-              <div class="color"></div>
+            <div className="progress">
+              <div className="color"></div>
               <h2 className="text">Loading...</h2>
             </div>
           </div>
