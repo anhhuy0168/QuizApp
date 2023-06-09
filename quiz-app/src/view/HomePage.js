@@ -16,7 +16,7 @@ const HomePage = () => {
           <div className="loading">
             <div className="progress">
               <div className="color"></div>
-              <h2 className="text">Loading...</h2>
+              <h2 className="textLoading">Loading...</h2>
             </div>
           </div>
    

@@ -64,7 +64,7 @@ const Question = () => {
   }, [answer]);
   return (
     <>
-    <div className="container">
+    <div className="containers">
     <img src={logo} className="img"/>
       <p className="question"> Question {questionIndex + 1}. {currentQuestion.question}</p>
       <p className="category">Category: {currentQuestion.category}</p>
@@ -73,6 +73,7 @@ const Question = () => {
           <p key={index}>
             <label>
               <input 
+              style={{marginRight:"10px"}}
                 type="radio"
                 value={result}
                 checked={answer === result}

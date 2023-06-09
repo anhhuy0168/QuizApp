@@ -12,9 +12,13 @@
         width: 200px;
         height: 200px;
     }
+    .containerButton{
+        display: flex;
+        padding-left: 6.5rem;
+        padding-top: 2rem;
+    }
     .buttons {
         margin-top: 10rem;
-        text-align: center;
     }
 }
 * {
